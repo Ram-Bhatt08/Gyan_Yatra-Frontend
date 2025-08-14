@@ -41,13 +41,13 @@ cd Gyan_Yatra-Frontend
 2. Install dependencies:
 
 npm install
-# or
+or
 yarn install
 
 3. Run the application:
 
 npm run dev
-# or
+ or
 yarn dev
 
 The application will be running on http://localhost:5173 by default.
@@ -94,9 +94,25 @@ Submit – On last question, quiz auto-submits and saves the result to the backe
 View Results – Users can view their score and see past quiz attempts.
 
 
+# Contributing
+We welcome contributions! Please follow these steps:
+
+Fork the repository
+
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+
 # 👨‍💻 Author
 
 # Ram Bhatt
-📧 Email: the.ram.bhatt@gmail.com
-🔗 Portfolio: the-ram-bhatt.vercel.app
-💼 LinkedIn:https://www.linkedin.com/in/ram-bhatt-12390a253/
+📧 Email: the.ram.bhatt@gmail.com <br>
+🔗 Portfolio: <a href="https://the-ram-bhatt.vercel.app" target="_blank">the-ram-bhatt.vercel.app</a> <br>
+💼 LinkedIn: <a href="https://www.linkedin.com/in/ram-bhatt-12390a253/" target="_blank">linkedin.com/in/ram-bhatt</a> <br>
+🐙 Project Link: <a href="https://github.com/Ram-Bhatt08/Gyan_Yatra-Frontend" target="_blank">Gyan_Yatra-Frontend</a> <br>
+
