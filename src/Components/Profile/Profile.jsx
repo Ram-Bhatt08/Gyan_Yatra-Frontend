@@ -29,23 +29,19 @@ function Profile() {
       }
 
       // Fetch all data in parallel where possible
-      const [profileRes, leaderboardRes, statsRes] = await Promise.all([
-        fetch("http://localhost:5000/api/auth/profile", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }),
-        fetch("http://localhost:5000/api/leaderboard", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }),
-        fetch("http://localhost:5000/api/stats", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-      ]);
+    const BASE_URL = "https://gyan-yatra-backend.onrender.com";
+
+const [profileRes, leaderboardRes, statsRes] = await Promise.all([
+  fetch(`${BASE_URL}/api/auth/profile`, {
+    headers: { Authorization: `Bearer ${token}` },
+  }),
+  fetch(`${BASE_URL}/api/leaderboard`, {
+    headers: { Authorization: `Bearer ${token}` },
+  }),
+  fetch(`${BASE_URL}/api/stats`, {
+    headers: { Authorization: `Bearer ${token}` },
+  })
+]);
 
       if (!profileRes.ok) throw new Error("Failed to fetch profile data");
       const profileData = await profileRes.json();

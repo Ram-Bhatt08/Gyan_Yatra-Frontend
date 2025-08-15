@@ -4,6 +4,8 @@ import "./Result.css";
 import Confetti from "react-confetti";
 import { FiAward, FiUser, FiHome, FiRepeat } from "react-icons/fi";
 
+const API_BASE_URL = "https://gyan-yatra-backend.onrender.com";
+
 function Result({ result, score, total }) {
   const navigate = useNavigate();
   const [dimensions, setDimensions] = useState({ 
@@ -35,7 +37,7 @@ function Result({ result, score, total }) {
     const saveResult = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch("http://localhost:5000/api/quiz/save-result", {
+        const res = await fetch(`${API_BASE_URL}/api/quiz/save-result`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

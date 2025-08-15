@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Leaderboard.css";
 
 function Leaderboard() {
@@ -10,7 +10,7 @@ function Leaderboard() {
     try {
       setLoading(true);
       setError("");
-      const res = await fetch("http://localhost:5000/api/leaderboard");
+      const res = await fetch("https://gyan-yatra-backend.onrender.com/api/leaderboard");
       if (!res.ok) throw new Error("Failed to load leaderboard");
       const data = await res.json();
       setLeaders(data);

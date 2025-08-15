@@ -1,4 +1,3 @@
-// src/components/LoadingSpinner/LoadingSpinner.js
 import "./LoadingSpinner.css";
 
 function LoadingSpinner({ small = false }) {

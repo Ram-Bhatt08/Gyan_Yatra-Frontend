@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./Quiz.css";
-import Result from "../Result/Result";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import Result from "../Result/Result";
+import "./Quiz.css";
+
+// ✅ Set your backend base URL here
+const API_BASE_URL = "https://gyan-yatra-backend.onrender.com";
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -34,7 +37,7 @@ function Quiz() {
 
     setLoading(true);
     fetch(
-      `http://localhost:5000/api/quiz/start?size=${numQuestions}&difficulty=${difficulty}`,
+      `${API_BASE_URL}/api/quiz/start?size=${numQuestions}&difficulty=${difficulty}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -72,7 +75,7 @@ function Quiz() {
         (Date.now() - (startTime.current || Date.now())) / 1000
       );
 
-      const res = await fetch("http://localhost:5000/api/quiz/submit", {
+      const res = await fetch(`${API_BASE_URL}/api/quiz/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +114,7 @@ function Quiz() {
     const next = current + 1;
     if (next < questions.length) {
       setCurrent(next);
-      setProgress(((next) / questions.length) * 100);
+      setProgress((next / questions.length) * 100);
     } else {
       submitToServer(updated);
     }
@@ -263,7 +266,7 @@ function Quiz() {
 
       <div className="question-container">
         <h3 className="question-text">{questions[current].questionText}</h3>
-        
+
         <div className="options-grid">
           {questions[current].options.map((option, i) => (
             <div
