@@ -8,8 +8,6 @@ Interactive Quizzes: Users can take a variety of quizzes on different topics.
 
 Result Tracking: View your quiz results and track your progress.
 
-Leaderbo<<<<<<< HEAD
-
 Leaderboard: A dynamic leaderboard to showcase top performers and foster friendly competition.
 
 User Profiles: Manage and update your user profile information.
